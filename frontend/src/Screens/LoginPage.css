@@ -1,0 +1,7 @@
+.displayGradient{
+	background: linear-gradient(to right,#fdd055  0%, #ff4040 100%);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+    font-size: 40px;
+    font-weight: 400;
+}
