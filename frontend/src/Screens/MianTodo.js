@@ -48,6 +48,14 @@ export default function MainPage(){
       return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id}/>
     })}
     </div >
+    <button className='btn btn-danger' style={{
+      position:"fixed",
+      bottom:"15px",
+      right:"0px",
+      borderRadius:"1000px",
+      height:"80px",
+      width:"80px"
+    }} onClick={user.logout}>Log Out</button>
     </header>
   </div>
 }

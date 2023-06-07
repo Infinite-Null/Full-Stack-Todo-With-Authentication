@@ -4,7 +4,6 @@ import UserContext from './UserContext';
 
 
 const UserState=(props)=>{
-    var num=0
     var [userData,setUserData]=useState({
         login:false,
         userId:"",
@@ -65,8 +64,17 @@ const UserState=(props)=>{
             return false
         }
     }
+  const logout=()=>{
+    setUserData({
+        login:false,
+        userId:"",
+        token:"",
+        fristName:"",
+        lastName:""
+    })
+  }
     return <UserContext.Provider value={{
-        userData,login,num,signup
+        userData,login,signup,logout
     }}>
         {props.children}
     </UserContext.Provider>
