@@ -37,15 +37,15 @@ export default function MainPage(){
       alignItems:"center",
       justifyContent:"center"
     }}>No Todo!</p>:(page==1)?todo.data.map((todo,i)=>{
-      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id}/>
+      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id} key={i}/>
     }):(page==2)?todo.data.filter((todo,i)=>{
       return todo.status!="Done"
     }).map((todo,i)=>{
-      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id}/>
+      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id} key={i}/>
     }):todo.data.filter((todo,i)=>{
       return todo.status=="Done"
     }).map((todo,i)=>{
-      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id}/>
+      return <EachTodo title={todo.title} discription={todo.discription} status={todo.status} id={todo._id} key={i}/>
     })}
     </div >
     <button className='btn btn-danger' style={{

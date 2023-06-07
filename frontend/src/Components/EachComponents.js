@@ -8,29 +8,29 @@ export default function EachTodo({title,discription,id,status}){
     fontWeight:"50"
   }
     return (status!="Done")?<>
-    <div class="card mainCard1" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
-    <div class="card-body">
-    <h5 class="card-title" style={fontstyle}>{title}</h5>
-    <p class="card-text textCard">{discription}</p>
-   <button type="button" class="btn btn-primary" style={{
+    <div className="card mainCard1" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
+    <div className="card-body">
+    <h5 className="card-title" style={fontstyle}>{title}</h5>
+    <p className="card-text textCard">{discription}</p>
+   <button type="button" className="btn btn-primary" style={{
       margin:"0px 10px 0px 0px"
     }} onClick={()=>{
       todo.updateStatus(id,"Done")
-    }}>Done</button><button type="button" class="btn btn-danger" onClick={()=>{
+    }}>Done</button><button type="button" className="btn btn-danger" onClick={()=>{
       todo.deleteData(id)
     }}>Delete</button>
   </div>
 </div>
 </>:<>
-    <div class="card mainCard" style={{width: "18rem", color:"white"}} >
-    <div class="card-body">
-    <h5 class="card-title" style={fontstyle}>{title}</h5>
-    <p class="card-text textCard">{discription}</p>
-   <button type="button" class="btn btn-primary" style={{
+    <div className="card mainCard" style={{width: "18rem", color:"white"}} >
+    <div className="card-body">
+    <h5 className="card-title" style={fontstyle}>{title}</h5>
+    <p className="card-text textCard">{discription}</p>
+   <button type="button" className="btn btn-primary" style={{
       margin:"0px 10px 0px 0px"
     }} onClick={()=>{
       todo.updateStatus(id,"Not Done")
-    }}>undo</button><button type="button" class="btn btn-danger" onClick={()=>{
+    }}>undo</button><button type="button" className="btn btn-danger" onClick={()=>{
       todo.deleteData(id)
     }}>Delete</button>
   </div>

@@ -4,14 +4,12 @@ import './App.css';
 import LoginPage from './Screens/LoginPage';
 import MainPage from './Screens/MianTodo';
 import Signup from './Screens/Signup';
-import UserState from './Context/User/UserState';
 import { useContext } from 'react';
 import UserContext from './Context/User/UserContext';
 import TodoState from './Context/Todo/TodoState';
 function App() {
   var k=useContext(UserContext)
   function rou(){
-    console.log(k.userData.login)
     if(k.userData.login==true||k.userData.login=='true'){
       return <Route path='/' element={<TodoState> <MainPage /> </TodoState>}/>
     }else{
@@ -20,15 +18,11 @@ function App() {
   }
   return <BrowserRouter>
   <Routes>
-     {/* {k.userData.login==true ? <Route path='/' element={<TodoState> <MainPage /> </TodoState>}/>:<Route path='/' element={<LoginPage />}/>} */}
      {rou()}
-      {!k.userData.login&&<Route path="/login" element={<LoginPage />}/>}
-      {!k.userData.login&&<Route path="/signup" element={<Signup />}/>}
+      {(k.userData.login!=true||k.userData.login!="true")&&<Route path="/login" element={<LoginPage />}/>}
+      {(k.userData.login!=true||k.userData.login!="true")&&<Route path="/signup" element={<Signup />}/>}
   </Routes>
 </BrowserRouter>
 }
 
 export default App;
-{/* <MainPage/> */}
-{/* <LoginPage/> */}
-{/* <Signup/> */}

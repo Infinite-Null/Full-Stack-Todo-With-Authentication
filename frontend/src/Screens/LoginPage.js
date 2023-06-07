@@ -7,7 +7,6 @@ export default function LoginPage(){
     const [loading,setloading]=useState(false)
     const navigator=useNavigate()
     function login(){
-        console.log(document.querySelector("#exampleFormControlInput2").value)
         var email=document.querySelector("#exampleFormControlInput1").value
         var password=document.querySelector("#exampleFormControlInput2").value
         if(email==""){
@@ -48,22 +47,22 @@ export default function LoginPage(){
      backdropFilter:"grayscale(0.6) blur(7px)",
      boxShadow:"2px 5px 35px 0px rgba(0,0,0,0.5)"
     }}>
-    <h1 class="display-6 displayGradient">Always Have Track</h1>
-    <h1 class="display-6 displayGradient" style={{
+    <h1 className="display-6 displayGradient">Always Have Track</h1>
+    <h1 className="display-6 displayGradient" style={{
     fontSize:"1.5em",
     marginBottom:"30px"
    }}>Of What To Do</h1>
-   <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
+   <div className="mb-3">
+  <label htmlFor="exampleFormControlInput1" className="form-label">Email address</label>
+  <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
    </div>
-   <div class="mb-3">
-  <label for="exampleFormControlInput2" class="form-label">Password</label>
-  <input type="password" class="form-control" id="exampleFormControlInput2"/>
+   <div className="mb-3">
+  <label htmlFor="exampleFormControlInput2" className="form-label">Password</label>
+  <input type="password" className="form-control" id="exampleFormControlInput2"/>
    </div>
-   <button className="btn btn-primary" onClick={login}>{loading?(<div class="spinner-border" role="status">
+   <button className="btn btn-primary" onClick={login}>{loading?(<div className="spinner-border" role="status">
 </div>):"Login"}</button>
-   <h1 class="display-6" style={{
+   <h1 className="display-6" style={{
     fontSize:"1.5em",
     margin:"10px"
    }}>Not a user?  <Link to='/signup'

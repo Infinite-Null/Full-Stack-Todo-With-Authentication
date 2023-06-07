@@ -12,7 +12,7 @@ const TodoState=(props)=>{
                 Authorization:"Bearer "+token 
             }
         })
-        Setdata(res.data.detail)
+        Setdata(res.data.detail.reverse())
     }
     const deleteData=async(id)=>{
     await Api.delete(`/todo/${id}`,{
