@@ -3,7 +3,7 @@ import "../Components/NavBar.css"
 import { useContext } from 'react';
 import UserContext from './../Context/User/UserContext';
 import TodoContext from '../Context/Todo/TodoContext';
-export default function Navbar(){
+export default function Navbar({changeIndex}){
   const user=useContext(UserContext)
     var style={
         color:"white",
@@ -29,12 +29,18 @@ export default function Navbar(){
     <ul class="nav nav-underline">
     
     <li class="nav-item">
-      <a class="nav-link" aria-current="page" href="#" style={style}>All</a>
+      <a class="nav-link" aria-current="page" href="#" onClick={()=>{
+        changeIndex(1)
+      }} style={style}>All</a>
     </li>
-    <li class="nav-item" style={style}>
+    <li class="nav-item" onClick={()=>{
+        changeIndex(2)
+      }}  style={style}>
       <a class="nav-link" href="#" style={style}>Todo</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" onClick={()=>{
+        changeIndex(3)
+      }} >
       <a class="nav-link" href="#" style={style}>Done</a>
     </li>
   

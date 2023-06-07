@@ -8,13 +8,10 @@ export default function EachTodo({title,discription,id,status}){
     fontWeight:"50"
   }
     return (status!="Done")?<>
-    <div class="card" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"1s",border: "2px solid white"}} >
+    <div class="card" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
     <div class="card-body">
     <h5 class="card-title" style={fontstyle}>{title}</h5>
-    <p class="card-text textCard" style={{
-    fontSize:"15px",
-    fontWeight:"400",
-  }}>{discription}</p>
+    <p class="card-text textCard">{discription}</p>
    <button type="button" class="btn btn-primary" style={{
       margin:"0px 10px 0px 0px"
     }} onClick={()=>{

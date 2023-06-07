@@ -1,5 +1,5 @@
 .mainCard{
-    transition: 1s;
+    transition: 0.4s;
     background-color: rgb(6, 6, 6);
  text-decoration: line-through;
  border: 2px solid rgb(171, 255, 171);
