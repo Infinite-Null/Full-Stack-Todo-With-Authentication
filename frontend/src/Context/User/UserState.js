@@ -5,11 +5,11 @@ import UserContext from './UserContext';
 
 const UserState=(props)=>{
     var [userData,setUserData]=useState({
-        login:false,
-        userId:"",
-        token:"",
-        fristName:"",
-        lastName:""
+        login:localStorage.getItem("login")??false,
+        userId:localStorage.getItem("userId")??"",
+        token:localStorage.getItem("token")??"",
+        fristName:localStorage.getItem("fristName")??"",
+        lastName:localStorage.getItem("lastName")??""
     })
     const login=async(email,password)=>{
         try{
@@ -25,6 +25,11 @@ const UserState=(props)=>{
                     fristName:res.data.fristName,
                     lastName:res.data.lastName,
                 })
+                localStorage.setItem("login", true)
+                localStorage.setItem("token", res.data.token)
+                localStorage.setItem("userId", res.data.userId)
+                localStorage.setItem("fristName", res.data.fristName)
+                localStorage.setItem("lastName", res.data.lastName)
             }
             else{
                 alert("Email Or Password Incorrect")
@@ -72,6 +77,11 @@ const UserState=(props)=>{
         fristName:"",
         lastName:""
     })
+    localStorage.setItem("login", false)
+    localStorage.setItem("token", "")
+    localStorage.setItem("userId", "")
+    localStorage.setItem("fristName", "")
+    localStorage.setItem("lastName", "")
   }
     return <UserContext.Provider value={{
         userData,login,signup,logout
