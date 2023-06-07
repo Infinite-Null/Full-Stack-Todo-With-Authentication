@@ -8,7 +8,7 @@ export default function EachTodo({title,discription,id,status}){
     fontWeight:"50"
   }
     return (status!="Done")?<>
-    <div class="card" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
+    <div class="card mainCard1" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
     <div class="card-body">
     <h5 class="card-title" style={fontstyle}>{title}</h5>
     <p class="card-text textCard">{discription}</p>

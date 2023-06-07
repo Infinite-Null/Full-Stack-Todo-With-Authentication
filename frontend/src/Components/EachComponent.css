@@ -3,6 +3,13 @@
     background-color: rgb(6, 6, 6);
  text-decoration: line-through;
  border: 2px solid rgb(171, 255, 171);
+ animation-duration: 0.5s;
+ animation-name: example;
+ animation-timing-function: ease-in-out;
+}
+.mainCard1{
+ animation-duration: 0.5s;
+ animation-name: example;
 }
 .textCard{
     height:180px;
@@ -22,3 +29,11 @@
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
+@keyframes slideUp {
+    from {opacity: 0.5;}
+    to {opacity: 1;}
+}
+@keyframes example {
+    from {translate: 0px 90px;opacity: 0.2;}
+    to {translate: 0px 0px;opacity: 1;}
+  }

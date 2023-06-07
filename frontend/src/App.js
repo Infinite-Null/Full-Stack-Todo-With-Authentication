@@ -10,9 +10,18 @@ import UserContext from './Context/User/UserContext';
 import TodoState from './Context/Todo/TodoState';
 function App() {
   var k=useContext(UserContext)
+  function rou(){
+    console.log(k.userData.login)
+    if(k.userData.login==true||k.userData.login=='true'){
+      return <Route path='/' element={<TodoState> <MainPage /> </TodoState>}/>
+    }else{
+      return <Route path='/' element={<LoginPage />}/>
+    }
+  }
   return <BrowserRouter>
   <Routes>
-     {k.userData.login ? <Route path='/' element={<TodoState> <MainPage /> </TodoState>}/>:<Route path='/' element={<LoginPage />}/>}
+     {/* {k.userData.login==true ? <Route path='/' element={<TodoState> <MainPage /> </TodoState>}/>:<Route path='/' element={<LoginPage />}/>} */}
+     {rou()}
       {!k.userData.login&&<Route path="/login" element={<LoginPage />}/>}
       {!k.userData.login&&<Route path="/signup" element={<Signup />}/>}
   </Routes>
