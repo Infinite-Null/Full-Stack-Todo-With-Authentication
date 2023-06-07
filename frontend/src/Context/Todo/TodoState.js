@@ -24,15 +24,19 @@ const TodoState=(props)=>{
     }
     const addData=async(title,discription)=>{
         await Api.post('/todo',{
-                "userId":user.userData.userId,
-                "title":title,
-                "discription":discription
+            "userId":user.userData.userId,
+            "title":title,
+            "discription":discription
+        },{
+            headers:{
+                Authorization:"Bearer "+user.userData.token 
+            }
         })
         getData(user.userData.userId,user.userData.token)
     }
     return <TodoContext.Provider value={
         {
-            data,getData,deleteData
+            data,getData,deleteData,addData
         }
     }>
         {props.children}

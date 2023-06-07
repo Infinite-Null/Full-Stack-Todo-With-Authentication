@@ -2,6 +2,7 @@ import logo from '../Icons/todo-icon-5.png'
 import "../Components/NavBar.css"
 import { useContext } from 'react';
 import UserContext from './../Context/User/UserContext';
+import TodoContext from '../Context/Todo/TodoContext';
 export default function Navbar(){
   const user=useContext(UserContext)
     var style={
@@ -38,12 +39,24 @@ export default function Navbar(){
     </li>
   
    </ul>
-   {dropdown()}
+   {Dropdown()}
   </div>
 </nav>
 </div>;
 }
-function dropdown(){
+function Dropdown(){
+  const todo=useContext(TodoContext)
+  function addTodo(){
+    const title=document.querySelector("#recipient-name").value
+    const discription=document.querySelector("#message-text").value
+    if(title===''){
+      alert("Title is required")
+      return
+    }
+    todo.addData(title,discription)
+    document.querySelector("#recipient-name").value=''
+    document.querySelector("#message-text").value=''
+  }
   return  <>
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Todo</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{
@@ -56,7 +69,7 @@ function dropdown(){
     border:'2px solid white'
   }}>
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel" onClick={addTodo}>Add Todo</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Todo</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -73,7 +86,7 @@ function dropdown(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-success">Add</button>
+        <button type="button" class="btn btn-success" onClick={addTodo}>Add</button>
       </div>
     </div>
   </div>
