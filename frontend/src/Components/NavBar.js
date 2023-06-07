@@ -48,10 +48,13 @@ function Dropdown(){
   const todo=useContext(TodoContext)
   function addTodo(){
     const title=document.querySelector("#recipient-name").value
-    const discription=document.querySelector("#message-text").value
+    var discription=document.querySelector("#message-text").value
     if(title===''){
       alert("Title is required")
       return
+    }
+    if(discription==''){
+      discription="..."
     }
     todo.addData(title,discription)
     document.querySelector("#recipient-name").value=''

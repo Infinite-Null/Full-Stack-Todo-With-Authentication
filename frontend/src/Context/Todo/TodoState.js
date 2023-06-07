@@ -34,9 +34,18 @@ const TodoState=(props)=>{
         })
         getData(user.userData.userId,user.userData.token)
     }
+
+    const updateStatus=async(id,status)=>{
+        await Api.patch(`/todo/status/${id}`,{"status":status},{
+            headers:{
+                Authorization:"Bearer "+user.userData.token 
+            }
+        })
+        getData(user.userData.userId,user.userData.token)
+    }
     return <TodoContext.Provider value={
         {
-            data,getData,deleteData,addData
+            data,getData,deleteData,addData,updateStatus
         }
     }>
         {props.children}

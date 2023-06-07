@@ -1,8 +1,8 @@
 .mainCard{
     transition: 1s;
-}
-.mainCard::hover{
-    background-color: aqua;
+    background-color: rgb(6, 6, 6);
+ text-decoration: line-through;
+ border: 2px solid rgb(171, 255, 171);
 }
 .textCard{
     height:180px;
