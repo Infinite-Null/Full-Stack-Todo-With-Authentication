@@ -4,7 +4,7 @@ import Navbar from '../Components/NavBar';
 import TodoContext from '../Context/Todo/TodoContext';
 import { useEffect } from 'react';
 import UserContext from '../Context/User/UserContext';
-
+import "./MainTodo.css"
 export default function MainPage(){
   const todo=useContext(TodoContext)
   const user=useContext(UserContext)
@@ -19,7 +19,13 @@ export default function MainPage(){
       setPage(pageno)
   }
     return <div className="App">
-    <header className="App-header">
+    <header className="App-header mainTodo" style={{
+      backgroundColor:"white",
+      border:"2px solid black",
+      margin:"15px",
+      borderRadius:"10px",
+      boxShadow:"2px 2px 30px 5px rgb(0,0,0,0.4)"
+    }}>
     <Navbar changeIndex={changeIndex}/>
     <div style={{
       display:"flex",
@@ -27,11 +33,11 @@ export default function MainPage(){
       gap:"20px",
       margin:"10px",
       alignItems:"center",
-      justifyContent:"center"
+      justifyContent:"center",
     }}>
     {(todo.data[0]=={}||todo.data.length==0)?<p style={{
       fontSize:"30px",
-      color:"white",
+      color:"black",
       height:"81vh",
       display:"flex",
       alignItems:"center",

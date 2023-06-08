@@ -7,10 +7,6 @@
     font-weight: 700;
 	
 }
-.mainDiv{
-	background: rgb(250, 217, 159);
-	border:'2px solid black'
-}
 .mainDiv1{
 	animation-name: login;
 	animation-duration: 1s;

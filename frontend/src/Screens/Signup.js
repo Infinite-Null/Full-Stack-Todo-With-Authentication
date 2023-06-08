@@ -29,7 +29,11 @@ export default function Signup(){
         alignItems:"center",
         justifyContent:"center",
         height:"100vh",
-        // filter:"brightness(0.85)"
+        backgroundImage:`url(${background})`,
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"cover",
+        zIndex:"1",
+        filter:"brightness(0.85)"
     }} className='mainDiv'>
     <div style={{
      height:"fit-content",

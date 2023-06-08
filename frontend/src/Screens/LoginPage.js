@@ -28,10 +28,11 @@ export default function LoginPage(){
         alignItems:"center",
         justifyContent:"center",
         height:"100vh",
-        // backgroundImage:`url(${background})`,
-        // backgroundRepeat:"no-repeat",
-        // backgroundSize:"cover",
-        // filter:"brightness(0.85)"s
+        backgroundImage:`url(${background})`,
+        backgroundRepeat:"no-repeat",
+        backgroundSize:"cover",
+        zIndex:"1",
+        filter:"brightness(0.85)"
     }} className='mainDiv'>
     <div style={{
      height:"fit-content",
@@ -44,6 +45,7 @@ export default function LoginPage(){
      borderRadius:"10px",
      width:"30rem",
      margin:"10px",
+     zIndex:"100",
      boxShadow:"12px 15px 25px 5px rgba(0,0,0,0.4)"
     }} className='mainDiv1'>
     <h1 className="display-6 displayGradient mainDiv2">"Always Have Track</h1>

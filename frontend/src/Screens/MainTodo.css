@@ -1,0 +1,9 @@
+.mainTodo{
+    animation-name: revel;
+    animation-duration: 0.5s;
+    
+}
+@keyframes revel {
+    from{scale: 0;}
+    to{scale: 1;}  
+}

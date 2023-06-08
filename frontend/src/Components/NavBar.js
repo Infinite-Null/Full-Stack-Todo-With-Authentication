@@ -6,9 +6,10 @@ import TodoContext from '../Context/Todo/TodoContext';
 export default function Navbar({changeIndex}){
   const user=useContext(UserContext)
     var style={
-        color:"white",
+        color:"black",
         fontSize:"20px",
-        letterSpacing:"2px"
+        letterSpacing:"2px",
+        fontWeight:"500"
        }
  return <div style={{
     padding:"5px 13px 10px 13px"
@@ -68,14 +69,12 @@ function Dropdown(){
   }
   return  <>
   <button type="button" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Add Todo</button>
-<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" style={{
-  backgroundColor:"rgba(0,0,0,0.3)"
-}}>
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div className="modal-dialog" >
     <div className="modal-content" style={{
-    background:"rgb(20,20,20)",
-    color:"white",
-    border:'2px solid white'
+    backgroundColor:"white",
+    color:"black",
+    border:'2px solid black'
   }}>
       <div className="modal-header">
         <h1 className="modal-title fs-5" id="exampleModalLabel">Add Todo</h1>
@@ -85,11 +84,15 @@ function Dropdown(){
         <form>
           <div className="mb-3">
             <label htmlFor="recipient-name" className="col-form-label">Title</label>
-            <input type="text" className="form-control" id="recipient-name"/>
+            <input type="text" className="form-control" id="recipient-name" style={{
+  borderBottom:"2px solid black"
+}}/>
           </div>
           <div className="mb-3">
             <label htmlFor="message-text" className="col-form-label">Discription</label>
-            <textarea className="form-control" id="message-text"></textarea>
+            <textarea className="form-control" id="message-text" style={{
+  borderBottom:"2px solid black"
+}}></textarea>
           </div>
         </form>
       </div>

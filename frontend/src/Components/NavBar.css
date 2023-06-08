@@ -1,10 +1,8 @@
 
 .textNav{
-	background: linear-gradient(to right,#7282ff  0%, #fb5050 100%);
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
     font-size: 40px;
-    font-weight: 400;
+    font-weight: 700;
+	/* background-color: rgb(182, 255, 182); */
 }
 .span1{
 	font-size: 25px;

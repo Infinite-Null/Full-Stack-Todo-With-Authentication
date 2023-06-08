@@ -8,7 +8,7 @@ export default function EachTodo({title,discription,id,status}){
     fontWeight:"50"
   }
     return (status!="Done")?<>
-    <div className="card mainCard1" style={{width: "18rem", color:"black",backgroundColor:"white",transition:"0.4s",border: "2px solid white"}} >
+    <div className="card mainCard1" style={{width: "18rem", color:"black",backgroundColor:"rgba(250, 217, 159,0.7)",border:"2px solid rgb(0,0,0,0.5)",transition:"0.4s"}} >
     <div className="card-body">
     <h5 className="card-title" style={fontstyle}>{title}</h5>
     <p className="card-text textCard">{discription}</p>
@@ -22,7 +22,7 @@ export default function EachTodo({title,discription,id,status}){
   </div>
 </div>
 </>:<>
-    <div className="card mainCard" style={{width: "18rem", color:"white"}} >
+    <div className="card mainCard" style={{width: "18rem", color:"black",border:"2px solid rgb(0,0,0,0.5)",backgroundColor:"rgb(192, 255, 162)"}} >
     <div className="card-body">
     <h5 className="card-title" style={fontstyle}>{title}</h5>
     <p className="card-text textCard">{discription}</p>
